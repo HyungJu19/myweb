@@ -1,0 +1,1050 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+}
+.searchbar1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 400px;
+}
+.searchbar1 input[type="text"] {
+  width: 100%;
+  padding: 10px 30px 10px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #f5f5f5; /* 검색창 배경색 */
+}
+input[name="search"] {
+  padding: 10px;
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.fa-solid.fa-magnifying-glass {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+#searchbutton {
+  border: none;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* 드롭다운 스타일 */
+.search-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 120px; /* 3개의 항목이 한번에 보이도록 설정. 각 항목의 높이가 40px인 경우 */
+  overflow-y: auto; /* 추가 항목은 스크롤로 볼 수 있음 */
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f5f5f5; /* 드롭다운 배경색. 검색창 배경색과 동일하게 설정 */
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.search-dropdown div {
+  padding: 10px;
+  cursor: pointer;
+  height: 40px; /* 각 항목의 높이 설정 */
+  box-sizing: border-box;
+}
+
+.search-dropdown div:hover {
+  background-color: #e0e0e0; /* 호버시 배경색 */
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 130px 40px 60px auto 100px;
+  height: 100%;
+  grid-template-areas:
+    "logo "
+    "nevi"
+    "searchbar"
+    "main"
+    "footer";
+}
+
+.main {
+  margin: 0px;
+  padding: 0px;
+}
+
+.game-content {
+  margin: 0px;
+  padding: 0px;
+  display: flex; /* flexbox 
+  레이아웃 적용 */
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  align-items: center; /* 가운데 정렬 */
+  border-radius: 10px;
+}
+
+.game-title {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 0px;
+  margin: 0px;
+}
+.game-total {
+  display: flex;
+  font-size: 17px;
+  color: #fcfcfc;
+  font-weight: bold;
+  padding: 0px;
+  margin: 0px;
+}
+.game-price {
+  display: flex;
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: bold;
+  margin: 0px;
+}
+.game-pricew {
+  padding-top: 5px;
+  display: flex;
+  font-size: 18px;
+  color: #ff0000;
+  font-weight: bold;
+  margin: 0px;
+  text-decoration: line-through;
+}
+.game-discount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+
+  color: #ffffff;
+  font-weight: bold;
+  margin: 0px;
+}
+.game-avg {
+  color: #fcfcfc;
+  font-weight: bold;
+  margin: 0px;
+}
+.game-genres {
+  font-weight: bold;
+  margin: 0px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+.deta1 {
+  display: flex;
+}
+
+.game-image {
+  margin: 0px;
+  padding: 0px;
+  padding-left: 0px;
+  max-width: 300px; /* 이미지의 최대 가로 크기 설정 */
+  width: 100%; /* 이미지의 가로 크기를 부모 요소의 100%로 설정 */
+  min-width: 200px; /* 이미지의 최소 가로 크기 설정 */
+}
+
+.game-video {
+  padding: 0px;
+  margin: 0px;
+  width: 640px;
+  height: 360px;
+  min-width: 480px;
+  min-height: auto;
+  border-radius: 15px;
+
+  margin-left: 20px; /* 이미지와 비디오 사이의 간격 조정 */
+}
+
+.nevi {
+  grid-area: nevi;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+/* 헤더B: 네비게이션 메뉴 */
+.nevi ul {
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nevi a {
+  display: block;
+  font-weight: bold;
+  padding: 10px;
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.nevi a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+/* 링크를 가로로 정렬 */
+.nevi ul {
+  display: flex;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo1 {
+  width: 200px;
+}
+
+.logo1,
+.logo2 {
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+  color: white;
+  gap: 10px;
+}
+.logo2 {
+  position: absolute; /* 절대 위치 지정 */
+  position: fixed;
+  right: 20px; /* 오른쪽에서 0px의 위치 */
+  top: 10px;
+}
+
+.logo1 img {
+  justify-content: center;
+  align-items: center;
+
+  width: 150px;
+}
+
+.searchhtml img {
+  width: 500px;
+  max-width: 600px;
+  min-width: 300px;
+  display: flex;
+}
+
+.footer {
+  grid-area: footer;
+
+  background-color: black;
+  width: 100%;
+  height: 80px;
+}
+
+.main2 {
+  grid-area: main2;
+}
+.mini-top {
+  margin-top: 100px;
+  background-color: white;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: bold;
+  color: white;
+  font-size: 30px;
+}
+
+.mini-title1 {
+  white-space: nowrap; /* 텍스트를 한 줄에만 표시하도록 합니다. */
+  overflow: hidden; /* 넘치는 내용을 숨깁니다. */
+  text-overflow: ellipsis; /* 넘치는 텍스트를 '...'로 표시합니다. */
+  max-width: 308px; /* 텍스트가 이 너비를 넘어가면 '...'로 표시됩니다. */
+}
+
+.mini-title2 {
+  white-space: nowrap; /* 텍스트를 한 줄에만 표시하도록 합니다. */
+  overflow: hidden; /* 넘치는 내용을 숨깁니다. */
+  text-overflow: ellipsis; /* 넘치는 텍스트를 '...'로 표시합니다. */
+  max-width: 308px; /* 텍스트가 이 너비를 넘어가면 '...'로 표시됩니다. */
+}
+.mini-title3 {
+  white-space: nowrap; /* 텍스트를 한 줄에만 표시하도록 합니다. */
+  overflow: hidden; /* 넘치는 내용을 숨깁니다. */
+  text-overflow: ellipsis; /* 넘치는 텍스트를 '...'로 표시합니다. */
+  max-width: 308px; /* 텍스트가 이 너비를 넘어가면 '...'로 표시됩니다. */
+}
+
+.mini-content {
+  min-width: 600px;
+  width: 100%;
+  height: auto;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: bold;
+  padding-bottom: 50px;
+}
+.mini-content a {
+  text-decoration: none;
+  color: white;
+}
+
+.game-option a {
+  text-decoration: none;
+}
+.genre-btn.active {
+  background-color: #f0f0f0; /* 활성화 상태의 배경색 */
+  border: 2px solid #333; /* 활성화 상태의 테두리 */
+  color: #333; /* 활성화 상태의 글자색 */
+  /* 기타 활성화 상태에 대한 스타일 */
+}
+
+#genre-buttons {
+  display: flex;
+  justify-content: center;
+
+  font-size: 30px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: bold;
+  height: auto;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.genre-btn {
+  /* 버튼의 기본 가로 사이즈 설정 */
+  flex: 1 1 auto;
+  margin: 5px;
+  padding: 10px;
+  /* 필요한 스타일링 추가 */
+}
+#genre-buttons button {
+  /* border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  font-weight: bold;
+  padding: 10px; */
+  padding: 10px 20px;
+  cursor: pointer;
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  transition: background-color 0.3s ease;
+}
+
+#genre-buttons button.active {
+  background-color: #fff;
+  border-bottom: 2px solid #4caf50;
+}
+.game-title {
+  justify-content: start;
+}
+.genre-list {
+  padding-top: px;
+  width: 100%;
+  min-width: 600px;
+  display: flex;
+
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.genre-list1 {
+  display: flex;
+
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px;
+  width: 768px;
+}
+.game-link {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+/* 게임 아이템 전체를 위한 스타일 */
+.game-item11 {
+  flex: 1 auto;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px; /* 아이템 간의 간격 */
+  width: 100%;
+}
+
+/* 게임 이미지를 위한 스타일 */
+.game-image11 {
+  width: 200px; /* 이미지의 너비 */
+  height: auto; /* 이미지의 높이는 자동으로 조절 */
+  margin-right: 20px; /* 이미지와 정보 간의 간격 */
+  margin-left: 20px;
+}
+
+/* 게임 정보 (링크, 제목, 출시일)를 담은 div를 위한 스타일 */
+.game-info {
+  display: flex;
+  color: black;
+  flex-direction: column;
+}
+
+/* 게임 제목을 위한 스타일 */
+
+.game-title1 {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  /* width: 300px; This line should be removed as it is overridden by width: 100%; below */
+  font-size: 1.5em; /* 제목 크기 */
+  margin-bottom: 5px; /* 제목과 출시일 간의 간격 */
+  width: 100%;
+  color: black;
+  font-weight: bold;
+  white-space: nowrap; /* 텍스트를 줄바꿈 없이 한 줄로 만듭니다 */
+  overflow: hidden; /* 요소의 너비를 넘어가는 내용을 숨깁니다 */
+  width: 400px; /* 최대 너비를 400px로 설정합니다 */
+  text-overflow: ellipsis; /* 넘어가는 텍스트를 '...'로 표시합니다 */
+}
+
+/* 출시일을 위한 스타일 */
+.game-release-date {
+  font-size: 0.9em; /* 출시일 텍스트 크기 */
+  color: #313131; /* 출시일 텍스트 색상 */
+  font-size: 15px;
+  font-weight: bold;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+/* 링크에 대한 기본 스타일 제거 */
+.game-link {
+  text-decoration: none; /* 밑줄 제거 */
+  color: inherit; /* 부모 요소로부터 색상 상속 */
+}
+
+.game-link:hover {
+  text-decoration: underline; /* 마우스 오버 시 밑줄 표시 */
+}
+
+.main {
+  margin-top: 50px;
+  padding-top: 20px;
+
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.mini-image1,
+.mini-image2,
+.mini-image3 {
+  width: 360px;
+}
+.search-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+}
+.video-container1 {
+  display: flex;
+  flex-direction: column;
+}
+.video-container1 iframe {
+  display: flex;
+  width: 620px;
+  height: 340px;
+}
+
+.searchhtml {
+  margin-top: 100px;
+  padding-top: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1200px;
+  min-width: 600px;
+  border-radius: 15px;
+  flex-direction: column;
+}
+.search-results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.search-img {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* 이미지 사이에 동일한 간격을 유지 */
+}
+.search-img img {
+  flex: 1 0 calc(50% - 4%); /* margin을 고려하여 flex-basis 계산 */
+  max-width: calc(50% - 4%); /* margin을 고려하여 너비 계산 */
+  margin: 2%; /* 상하 좌우 마진을 2%로 설정 */
+}
+
+.bottumcontent {
+  margin: 0px;
+  padding: 0px;
+
+  padding-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3px;
+  border: 1px solid black;
+  width: 100%;
+  height: auto;
+  background-color: white;
+}
+.it {
+  height: 150px;
+  width: 800px;
+  border: 1px solid black;
+}
+
+.searchhead {
+  display: flex;
+}
+.imgcontent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.searc11 {
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.video11 {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.search-img11 img {
+  width: calc(50% - 10px); /* 부모의 50%에서 gap만큼 뺀 너비를 계산합니다 */
+  height: auto; /* 이미지의 비율을 유지합니다 */
+}
+.search-img11 {
+  display: flex;
+  flex: 1; /* 이미지 부분도 유연하게 공간을 차지하도록 설정합니다 */
+  flex-wrap: wrap; /* 내용이 넘치면 다음 줄로 넘어가도록 설정합니다 */
+  justify-content: flex-start; /* 이미지를 왼쪽 정렬합니다 */
+  gap: 10px; /* 이미지 사이의 간격을 설정합니다 */
+}
+.it {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.it > :first-child {
+  width: 320px;
+}
+.it > :nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+}
+.it > :nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.8em;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-links,
+.social-media-list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li,
+.social-media-list li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.footer-links a,
+.social-media-list a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.social-media-list a:hover {
+  color: #1e90ff; /* Light blue color for hover state */
+}
+
+.social-media-list i {
+  font-size: 1.2em; /* Larger font size for social icons */
+}
+
+/* If you're using Font Awesome, include this to ensure proper vertical alignment */
+.fa {
+  line-height: 1;
+}
+
+.steam-news-container {
+  margin: 20px;
+}
+
+.pagination-container {
+  border: 1px solid black;
+}
+.modal {
+  display: none; /* 기본적으로는 보이지 않음 */
+  position: fixed; /* 페이지 내 고정 */
+  z-index: 1; /* 나머지 내용 위에 표시 */
+  left: 0;
+  top: 0;
+  width: 100%; /* 전체 너비 */
+  height: 100%; /* 전체 높이 */
+  overflow: auto; /* 외부 클릭 시 닫을 수 있게 함 */
+  background-color: rgb(0, 0, 0); /* 폴백 색상 */
+  background-color: rgba(0, 0, 0, 0.4); /* 검은색 w/ opacity */
+}
+
+/* 모달 콘텐츠 */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 페이지 중앙에 위치 */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* 모달 너비 */
+}
+
+/* 닫기 버튼 */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 폼 스타일 */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input1 {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.button111 {
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button111:hover {
+  opacity: 0.8;
+}
+.modal-content {
+  border-radius: 15px;
+}
+
+.game-date {
+  text-decoration-line: none;
+  color: white;
+  margin-right: 10px;
+}
+
+@media (max-width: 1000px) {
+  .mini-content {
+    flex-direction: column;
+  }
+
+  .mini-image1,
+  .mini-image2,
+  .mini-image3 {
+    width: 100%;
+  }
+  .genre-btn {
+    padding: 8px;
+    margin: 4px;
+  }
+  #item3 {
+    display: block;
+  }
+}
+.bestvi {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+}
+#youtubeIframe1,
+#youtubeIframe2 {
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .mini-content {
+    flex-direction: column;
+  }
+  .game-content {
+    width: 100%;
+    flex-direction: column;
+  }
+  .game-date {
+    display: none;
+  }
+  .game-price {
+    display: none;
+  }
+  .game-pricew {
+    display: none;
+  }
+  .game-genres {
+    display: none;
+  }
+  .game-total {
+    display: none;
+  }
+  .game-option {
+  }
+  .game-image {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: 10px;
+  }
+  .game-discount {
+    display: none;
+  }
+  #genre-buttons {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .genre-btn {
+    /* 한 줄에 2개의 버튼이 나오도록 설정 */
+    flex: 1 0 48%;
+    margin: 1%;
+  }
+  .game-title {
+    margin-bottom: 10px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .contentright {
+    padding-left: 0px;
+    height: auto;
+  }
+  .genre-btn {
+    /* 한 줄에 1개의 버튼만 나오도록 설정 */
+    flex: 1 0 98%;
+    margin: 1% auto; /* 가운데 정렬을 위해 auto를 사용 */
+    padding: 10px; /* 다시 padding을 늘릴 수 있음 */
+  }
+
+  .nevi a {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .game-image {
+    width: 500px;
+  }
+
+  .container {
+    grid-template-columns: 1fr; /* 모든 요소를 한 열에 표시 */
+    grid-template-areas:
+      "logo"
+      "nevi"
+      "searchbar"
+      "main"
+      "main2"
+      "footer";
+  }
+  .searchbar-from {
+    display: flex; /* 인풋과 버튼을 한 줄에 나타내기 위해 */
+    align-items: center; /* 버튼과 인풋을 중앙 정렬 */
+  }
+  .search-button {
+    background-color: white;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  button,
+  #gameSearchInput {
+    vertical-align: middle;
+  }
+
+  #gameSearchInput {
+    flex-grow: 1; /* 인풋 필드가 가능한 모든 공간을 차지하도록 */
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-right: -1px; /* 버튼과 인풋 사이의 간격을 없애기 위해 */
+  }
+
+  .searchbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 35px;
+  }
+  .game-video {
+    display: none; /* 이미지를 숨김 */
+  }
+  .game-image {
+    max-width: 100%;
+    height: 100%;
+    padding-left: 0px;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .searchbar1 {
+    margin: 0px;
+    margin-top: 30px;
+  }
+
+  .game-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+
+  .game-pricew,
+  .game-price,
+  .game-total {
+    width: 40%; /* 각 요소의 너비를 절반으로 설정 */
+  }
+
+  .game-title {
+    order: 1;
+  }
+  .game-video {
+    order: 2;
+    padding-left: 0; /* 이미지가 숨겨진 상태이므로 여백도 제거*/
+  }
+}
+
+.searchbar {
+  margin-top: 40px;
+}
+
+.video-container {
+  position: fixed; /* 고정 위치 */
+  top: 0;
+  left: 0;
+  width: 100vw; /* 뷰포트의 전체 너비 */
+  height: 1000px; /* 뷰포트의 전체 높이 */
+  z-index: -1; /* 다른 내용이 비디오 위에 오도록 */
+  filter: blur(2px); /* 흐리게 만들기 */
+  object-fit: cover; /* 비디오 크기를 컨테이너에 맞춤 */
+}
+
+.mini-genres1 button {
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.mini-genres2 button {
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.mini-genres3 button {
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.game-genres button {
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.game-discount button {
+  display: none;
+  margin: 0px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  transition: background-color 0.3s ease;
+}
+.backgroundimg {
+  position: fixed; /* 고정 위치 */
+  top: 0;
+  left: 0;
+  width: 100vw; /* 뷰포트의 전체 너비 */
+  height: 100vh; /* 뷰포트의 전체 높이 */
+  z-index: -1; /* 다른 내용이 비디오 위에 오도록 */
+  filter: blur(2px); /* 흐리게 만들기 */
+  object-fit: cover; /* 비디오 크기를 컨테이너에 맞춤 */
+}
+.backgroundimg1 {
+  position: fixed; /* 고정 위치 */
+  top: 0;
+  left: 0;
+  width: 100vw; /* 뷰포트의 전체 너비 */
+  height: 100vh; /* 뷰포트의 전체 높이 */
+  z-index: -1; /* 다른 내용이 비디오 위에 오도록 */
+  filter: blur(2px); /* 흐리게 만들기 */
+  object-fit: cover; /* 비디오 크기를 컨테이너에 맞춤 */
+}
+.background-image {
+  position: fixed; /* 고정 위치 */
+  top: 0;
+  left: 0;
+  width: 100vw; /* 뷰포트의 전체 너비 */
+  height: 100vh; /* 뷰포트의 전체 높이 */
+  z-index: -1; /* 다른 내용이 비디오 위에 오도록 */
+  filter: blur(2px); /* 흐리게 만들기 */
+  object-fit: cover; /* 비디오 크기를 컨테이너에 맞춤 */
+}
+
+.slider-prev,
+.slider-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.slider-prev {
+  left: 10px;
+}
+
+.slider-next {
+  right: 10px;
+}
+
+.steam-news-container {
+  padding: 20px;
+  background-color: #f5f5f5; /* Light grey background */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Simple box shadow for depth */
+}
+
+.news-item {
+  margin-bottom: 20px; /* Space between news items */
+}
+
+.news-title {
+  margin-bottom: 10px;
+  color: #333; /* Dark text for readability */
+  font-size: 1.5em; /* Large font size for titles */
+}
+
+.news-content {
+  color: #666; /* Lighter text color for the news content */
+  line-height: 1.6; /* More readable line spacing */
+}
+
+.news-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007bff; /* Bootstrap primary color for links */
+  text-decoration: none; /* No underline */
+  font-weight: bold;
+}
+
+.news-link:hover {
+  text-decoration: underline; /* Underline on hover for a clear indication of interactivity */
+}
